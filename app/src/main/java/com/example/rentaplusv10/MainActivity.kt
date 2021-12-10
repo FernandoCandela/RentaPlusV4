@@ -40,4 +40,18 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
         startActivity(intent)
     }
 
+    override fun OnMiPerfilClick() {
+        TODO("Not yet implemented")
+    }
+
+    override fun OnAgregarInmuebleClick() {
+        val intent: Intent = Intent()
+        intent.setClass(this, AddInmueble::class.java)
+        startActivity(intent)
+    }
+
+    override fun OnCerrarSesionClick() {
+        TODO("Not yet implemented")
+    }
+
 }

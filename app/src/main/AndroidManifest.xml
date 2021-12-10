@@ -50,6 +50,9 @@
         <activity
             android:name=".EditInmuebleActivity"
             android:exported="false"/>
+        <activity
+            android:name=".AddInmueble"
+            android:exported="false"/>
     </application>
 
 </manifest>
