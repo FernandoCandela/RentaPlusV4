@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Renta">
         <activity
-            android:name=".model.TakePhotoActivity"
-            android:exported="false" />
-        <activity
             android:name=".DeleteAccountActivity"
             android:exported="false" />
         <activity
