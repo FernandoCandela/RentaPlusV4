@@ -10,10 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.rentaplusv10.R
 import com.example.rentaplusv10.model.Arrendatario
 import com.example.rentaplusv10.model.Inmueble
 import com.example.rentaplusv10.model.InmuebleManager
+import com.google.firebase.auth.FirebaseAuth
 
 class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
 
@@ -42,8 +44,8 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // val idUser = FirebaseAuth.getInstance().currentUser!!.uid
-        val idUser = "KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
+        val idUser = FirebaseAuth.getInstance().currentUser!!.uid
+        //val idUser = "KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
         print(idUser)
 
 
@@ -52,12 +54,20 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             tviInmuebleTitle.text = inm.titulo
             val tviInmuebleDireccion = view.findViewById<TextView>(R.id.tviInmuebleDireccion)
             tviInmuebleDireccion.text = inm.direccion
-//
+            val imgIn = view.findViewById<ImageView>(R.id.iviInmueblePhoto)
+            Glide
+                .with(this)
+                .load(inm.url)
+                .override(200,100)
+                .centerCrop()
+                .placeholder(R.drawable.mapa)
+                .into(imgIn)
+
             val butEditInmuebleDetail = view.findViewById<Button>(R.id.butEditInmuebleDetail)
             butEditInmuebleDetail.setOnClickListener { _: View ->
                 listener?.onEditInmuebleClick()
             }
-//
+
         }, { error ->
             Toast.makeText(activity, "Error: " + error, Toast.LENGTH_SHORT).show()
         })
