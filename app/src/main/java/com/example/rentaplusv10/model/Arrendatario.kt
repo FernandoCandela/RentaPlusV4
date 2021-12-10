@@ -10,6 +10,6 @@ data class Arrendatario(
     val fecha_pago: String,
     val idInmueble: String,
     val monto: Long,
-    val nombre: String,
+    val nombres: String,
     val telefono: String
 ) : Serializable

@@ -9,9 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.rentaplusv10.R
-import com.example.rentaplusv10.adapter.InmuebleListAdapter
 import com.example.rentaplusv10.model.Arrendatario
 import com.example.rentaplusv10.model.Inmueble
 import com.example.rentaplusv10.model.InmuebleManager
@@ -63,7 +61,7 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
         })
         InmuebleManager().getArrendatarioActivo(idInmueble,{ arr: Arrendatario ->
             val tviInquilinoActualName = view.findViewById<TextView>(R.id.tviInquilinoActualName)
-            tviInquilinoActualName.text = arr.nombre + " " + arr.apellidos
+            tviInquilinoActualName.text = arr.nombres + " " + arr.apellidos
             val tviDeudaInquilinoActual = view.findViewById<TextView>(R.id.tviDeudaInquilinoActual)
             tviDeudaInquilinoActual.text = arr.monto.toString()
             val tviFechaPagoInquilinoActual = view.findViewById<TextView>(R.id.tviFechaPagoInquilinoActual)

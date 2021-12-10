@@ -103,7 +103,7 @@ class InmuebleManager() {
                         document.data["fecha_pago"]!! as String,
                         document.data["idInmueble"]!! as String,
                         document.data["monto"]!! as Long,
-                        document.data["nombre"]!! as String,
+                        document.data["nombres"]!! as String,
                         document.data["telefono"]!! as String,
                     )
                     arrendatarios.add(pk)
@@ -175,7 +175,7 @@ class InmuebleManager() {
                     "fecha_pago" to arrendatario.fecha_pago,
                     "idInmueble" to arrendatario.idInmueble,
                     "monto" to arrendatario.monto,
-                    "nombre" to arrendatario.nombre,
+                    "nombre" to arrendatario.nombres,
                     "telefono" to arrendatario.telefono
                 )
             )
@@ -220,7 +220,7 @@ class InmuebleManager() {
                 "fecha_pago", arrendatario.fecha_pago,
                 "idInmueble", arrendatario.idInmueble,
                 "monto", arrendatario.monto,
-                "nombre", arrendatario.nombre,
+                "nombre", arrendatario.nombres,
                 "telefono", arrendatario.telefono
             )
             .addOnSuccessListener {

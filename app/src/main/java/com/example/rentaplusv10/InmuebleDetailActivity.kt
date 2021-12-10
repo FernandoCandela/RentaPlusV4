@@ -3,7 +3,6 @@ package com.example.rentaplusv10
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rentaplusv10.fragments.InmuebleDetailFragment
 import com.example.rentaplusv10.model.Arrendatario
@@ -52,7 +51,7 @@ class InmuebleDetailActivity : AppCompatActivity(),InmuebleDetailFragment.OnInmu
         intent.setClass(this, AddFacturaActivity::class.java)
         val bundle: Bundle = Bundle()
         bundle.putString("inmueble", idInmueble )
-        bundle.putString("arrendatario", arrendatario.nombre + " " + arrendatario.apellidos)
+        bundle.putString("arrendatario", arrendatario.nombres + " " + arrendatario.apellidos)
         intent.putExtra("data", bundle)
         startActivity(intent)
     }
