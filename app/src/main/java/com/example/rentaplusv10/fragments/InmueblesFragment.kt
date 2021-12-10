@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,9 @@ class InmueblesFragment  : Fragment(){
 
     interface OnInmuebleSelectedListener {
         fun onSelect(inmueble: Inmueble)
+        fun OnMiPerfilClick()
+        fun OnAgregarInmuebleClick()
+        fun OnCerrarSesionClick()
     }
 
     private var listener: OnInmuebleSelectedListener? = null
@@ -40,6 +44,19 @@ class InmueblesFragment  : Fragment(){
 
         val idUser = FirebaseAuth.getInstance().currentUser!!.uid
         print(idUser)
+        val btnMiperfil  = view.findViewById<Button>(R.id.btnMiperfil)
+        val btnAgregarInmueble = view.findViewById<Button>(R.id.btnAgregarInmueble)
+        val btnCerrarSesion = view.findViewById<Button>(R.id.btnCerrarSesion)
+
+        btnMiperfil.setOnClickListener{ _ :View ->
+            listener?.OnMiPerfilClick()
+        }
+        btnAgregarInmueble.setOnClickListener{ _ : View ->
+            listener?.OnAgregarInmuebleClick()
+        }
+        btnCerrarSesion.setOnClickListener { _:View ->
+            listener?.OnCerrarSesionClick()
+        }
         InmuebleManager().getInmueblesByUser(idUser,{ vgList : MutableList<Inmueble> ->
             val rviInmuebles = view.findViewById<RecyclerView>(R.id.rviInmuebles)
             rviInmuebles.adapter = InmuebleListAdapter(
