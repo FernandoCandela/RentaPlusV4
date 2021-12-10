@@ -75,6 +75,10 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
                 tviDeudaInquilinoActual.text = ""
 
                 tviFechaPagoInquilinoActual.text = ""
+
+                btnAgregarInquilino.setOnClickListener{ _ : View ->
+                    listener?.onAgregarInquilino()
+                }
             }else{
 
 

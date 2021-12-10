@@ -19,7 +19,7 @@ class AddInquilinoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_inmueble)
+        setContentView(R.layout.activity_add_arrendatario)
         val idUser = FirebaseAuth.getInstance().currentUser!!.uid
 
         idInmueble = intent.getBundleExtra("data")?.getString("inmueble").toString()
@@ -36,16 +36,16 @@ class AddInquilinoActivity : AppCompatActivity() {
 
 
             InmuebleManager().changetoinactivo({
+                InmuebleManager().addArrendatario(Arrendatario("",true,tviApellidos.text.toString(),
+                    tviEmail.text.toString(),tviEmail.text.toString(),idInmueble,parseLong(tviMonto.text.toString()),
+                    tviNombres.text.toString(),tviTelefono.text.toString()),{
+                    Toast.makeText(this, "Arrendatario creado" , Toast.LENGTH_SHORT).show()
+                },{error ->
+                    Toast.makeText(this, "Error: " + error, Toast.LENGTH_SHORT).show()})
             },{ error ->
                 Toast.makeText(this, "Error: " + error, Toast.LENGTH_SHORT).show()
             })
 
-            InmuebleManager().addArrendatario(Arrendatario("",true,tviApellidos.text.toString(),
-                tviEmail.text.toString(),tviEmail.text.toString(),idInmueble,parseLong(tviMonto.text.toString()),
-                tviNombres.text.toString(),tviTelefono.text.toString()),{
-                Toast.makeText(this, "Arrendatario creado" , Toast.LENGTH_SHORT).show()
-            },{error ->
-                Toast.makeText(this, "Error: " + error, Toast.LENGTH_SHORT).show()})
         }
     }
 }
