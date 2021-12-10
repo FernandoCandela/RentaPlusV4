@@ -50,7 +50,7 @@ class InmuebleManager() {
                         document.data["monto"]!! as Long,
                         document.data["fecha_pago"]!! as String,
                         document.data["idInmueble"]!! as String,
-                        document.data["url_factura"]!! as String
+                        document.data["url"]!! as String
                     )
                     historial.add(his)
                 }

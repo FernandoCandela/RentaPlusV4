@@ -66,5 +66,14 @@ class InmuebleDetailActivity : AppCompatActivity(),InmuebleDetailFragment.OnInmu
         startActivity(intent)
     }
 
+    override fun onHistorialClick() {
+        val intent: Intent = Intent()
+        intent.setClass(this, HistorialActivity::class.java)
+        val bundle: Bundle = Bundle()
+        bundle.putString("inmueble", idInmueble )
+        intent.putExtra("data", bundle)
+        startActivity(intent)
+    }
+
 
 }

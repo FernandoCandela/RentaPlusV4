@@ -22,6 +22,7 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
         fun onEditInquilinoClick(arrendatario: Arrendatario)
         fun onAddFacturaClick(arrendatario: Arrendatario)
         fun onAgregarInquilino()
+        fun onHistorialClick()
     }
 
     private var listener: OnInmuebleClicked? = null
@@ -68,6 +69,7 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             val butEditarInquilinoActual = view.findViewById<Button>(R.id.butEditarInquilinoActual)
             val butAgregarFactura = view.findViewById<Button>(R.id.butAgregarFactura)
             val btnAgregarInquilino = view.findViewById<ImageView>(R.id.btnAgregarInquilino)
+            val btnHistorial = view.findViewById<ImageView>(R.id.btnHistorial)
 
             if(arr == null){
                 tviInquilinoActualName.text = ""
@@ -78,6 +80,9 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
 
                 btnAgregarInquilino.setOnClickListener{ _ : View ->
                     listener?.onAgregarInquilino()
+                }
+                btnHistorial.setOnClickListener{ _ : View ->
+                    listener?.onHistorialClick()
                 }
             }else{
 
@@ -100,6 +105,9 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             btnAgregarInquilino.setOnClickListener{ _ : View ->
                 listener?.onAgregarInquilino()
             }
+                btnHistorial.setOnClickListener{ _ : View ->
+                    listener?.onHistorialClick()
+                }
 
             }
 

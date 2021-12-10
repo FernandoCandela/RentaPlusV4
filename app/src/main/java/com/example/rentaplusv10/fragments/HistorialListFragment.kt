@@ -12,7 +12,7 @@ import com.example.rentaplusv10.adapter.HistorialListAdapter
 import com.example.rentaplusv10.model.Historial
 import com.example.rentaplusv10.model.InmuebleManager
 
-class HistorialListFragment : Fragment(){
+class HistorialListFragment(val idInmueble: String) : Fragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +24,7 @@ class HistorialListFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var id = ""
+        var id = idInmueble
         InmuebleManager().getHistorialByInmueble(id,{ vgList : MutableList<Historial> ->
             val rviPokemon = view.findViewById<RecyclerView>(R.id.rviHistorial)
             rviPokemon.adapter = HistorialListAdapter(
