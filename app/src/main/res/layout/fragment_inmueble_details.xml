@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="12dp"
-        android:text="Agregar Arrendatario"
+        android:text="Historial"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toStartOf="@+id/btnHistorial"
         app:layout_constraintTop_toBottomOf="@+id/tviaddinquilino" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="32dp"
-        android:text="Historial"
+        android:text="Agregar Arrendatario"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/btnHistorial"
         app:layout_constraintEnd_toStartOf="@+id/btnAgregarInquilino" />
