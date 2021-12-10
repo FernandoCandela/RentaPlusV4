@@ -47,7 +47,7 @@ class InmuebleManager() {
                     val his = Historial(
                         document.id,
                         document.data["arrendatario"]!! as String,
-                        document.data["monto"]!! as Float,
+                        document.data["monto"]!! as Long,
                         document.data["fecha_pago"]!! as String,
                         document.data["idInmueble"]!! as String,
                         document.data["url_factura"]!! as String

@@ -20,8 +20,8 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
 
     interface OnInmuebleClicked {
         fun onEditInmuebleClick()
-        fun onEditInquilinoClick()
-        fun onAddFacturaClick()
+        fun onEditInquilinoClick(arrendatario: Arrendatario)
+        fun onAddFacturaClick(arrendatario: Arrendatario)
     }
 
     private var listener: OnInmuebleClicked? = null
@@ -70,12 +70,12 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             tviFechaPagoInquilinoActual.text = arr.fecha_pago
             val butEditarInquilinoActual = view.findViewById<Button>(R.id.butEditarInquilinoActual)
             butEditarInquilinoActual.setOnClickListener{ _:View ->
-                listener?.onEditInquilinoClick()
+                listener?.onEditInquilinoClick(arr)
             }
 
             val butAgregarFactura = view.findViewById<Button>(R.id.butAgregarFactura)
             butAgregarFactura.setOnClickListener{ _ : View ->
-                listener?.onAddFacturaClick()
+                listener?.onAddFacturaClick(arr)
             }
 
         }, { error ->

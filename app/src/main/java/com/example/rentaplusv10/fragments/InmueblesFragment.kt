@@ -38,8 +38,7 @@ class InmueblesFragment  : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // val idUser = FirebaseAuth.getInstance().currentUser!!.uid
-        val idUser="KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
+        val idUser = FirebaseAuth.getInstance().currentUser!!.uid
         print(idUser)
         InmuebleManager().getInmueblesByUser(idUser,{ vgList : MutableList<Inmueble> ->
             val rviInmuebles = view.findViewById<RecyclerView>(R.id.rviInmuebles)
