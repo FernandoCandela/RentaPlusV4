@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
         fun onEditInmuebleClick()
         fun onEditInquilinoClick(arrendatario: Arrendatario)
         fun onAddFacturaClick(arrendatario: Arrendatario)
+        fun onAgregarInquilino()
     }
 
     private var listener: OnInmuebleClicked? = null
@@ -65,6 +67,8 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             val tviFechaPagoInquilinoActual = view.findViewById<TextView>(R.id.tviFechaPagoInquilinoActual)
             val butEditarInquilinoActual = view.findViewById<Button>(R.id.butEditarInquilinoActual)
             val butAgregarFactura = view.findViewById<Button>(R.id.butAgregarFactura)
+            val btnAgregarInquilino = view.findViewById<ImageView>(R.id.btnAgregarInquilino)
+
             if(arr == null){
                 tviInquilinoActualName.text = ""
 
@@ -88,6 +92,11 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
             butAgregarFactura.setOnClickListener{ _ : View ->
                 listener?.onAddFacturaClick(arr)
             }
+
+            btnAgregarInquilino.setOnClickListener{ _ : View ->
+                listener?.onAgregarInquilino()
+            }
+
             }
 
         }, { error ->

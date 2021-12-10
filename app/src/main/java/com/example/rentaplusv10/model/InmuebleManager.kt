@@ -203,8 +203,11 @@ class InmuebleManager() {
                     res.forEach{item ->
                         dbFirebase.collection("arrendatario").document(item.id).update("activo",false)
                     }
+                    callbackOK(true)
+                }else{
+                    callbackOK(false)
                 }
-                callbackOK(true)
+
             }
             .addOnFailureListener {
                 callbackError(it.message!!)
