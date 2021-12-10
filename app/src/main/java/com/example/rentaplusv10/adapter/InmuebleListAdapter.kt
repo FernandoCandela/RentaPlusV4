@@ -51,7 +51,7 @@ class InmuebleListAdapter(
             .load(inmuebleList[position].url)
             .override(200,100)
             .centerCrop()
-            .placeholder(R.drawable.mapa)
+            .placeholder(R.drawable.ubicacion)
             .into(holder.iviInmuebleImage)
 
 

@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iviFoto" />
+        app:layout_constraintTop_toBottomOf="@+id/iviFotoArr" />
 
     <EditText
         android:id="@+id/tviApellidos"
@@ -84,7 +84,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Telefono"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:maxLength="40"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Fecha de Pago"
-        android:inputType="date"
+        android:inputType="textPersonName"
         android:maxLength="40"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +128,7 @@
         app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
-        android:id="@+id/iviFoto"
+        android:id="@+id/iviFotoArr"
         android:layout_width="176dp"
         android:layout_height="184dp"
         android:layout_marginTop="16dp"
