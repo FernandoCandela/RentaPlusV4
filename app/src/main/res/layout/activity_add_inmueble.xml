@@ -21,10 +21,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviDireccion" />
+        app:layout_constraintTop_toBottomOf="@+id/tviApellidos" />
 
     <EditText
-        android:id="@+id/tviDireccion"
+        android:id="@+id/tviApellidos"
         android:layout_width="264dp"
         android:layout_height="54dp"
         android:layout_marginTop="32dp"

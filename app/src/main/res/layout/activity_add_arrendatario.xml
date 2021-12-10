@@ -8,10 +8,10 @@
     tools:layout_editor_absoluteY="-89dp">
 
     <EditText
-        android:id="@+id/tviDireccion6"
+        android:id="@+id/tviMonto"
         android:layout_width="264dp"
         android:layout_height="54dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="@string/name"
         android:background="@drawable/ic_field"
         android:drawablePadding="16dp"
@@ -23,13 +23,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tviFechaPago" />
 
     <EditText
-        android:id="@+id/tviDireccion5"
+        android:id="@+id/tviFechaPago"
         android:layout_width="264dp"
         android:layout_height="54dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="20dp"
         android:autofillHints="@string/name"
         android:background="@drawable/ic_field"
         android:drawablePadding="16dp"
@@ -41,13 +41,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tviTelefono" />
 
     <EditText
-        android:id="@+id/tviDireccion3"
+        android:id="@+id/tviEmail"
         android:layout_width="264dp"
         android:layout_height="54dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="@string/name"
         android:background="@drawable/ic_field"
         android:drawablePadding="16dp"
@@ -59,13 +59,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tviApellidos" />
 
     <EditText
-        android:id="@+id/tviDireccion4"
+        android:id="@+id/tviTelefono"
         android:layout_width="264dp"
         android:layout_height="54dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="@string/name"
         android:background="@drawable/ic_field"
         android:drawablePadding="16dp"
@@ -77,25 +77,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tviEmail" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGuardar"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_buttom"
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:text="@string/update_profile"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="628dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tviMonto" />
 
     <EditText
-        android:id="@+id/tviDireccion"
+        android:id="@+id/tviApellidos"
         android:layout_width="264dp"
         android:layout_height="54dp"
         android:layout_marginTop="12dp"
