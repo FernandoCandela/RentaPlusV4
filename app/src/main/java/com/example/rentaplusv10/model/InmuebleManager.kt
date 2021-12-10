@@ -60,6 +60,29 @@ class InmuebleManager() {
                 callbackError(it.message!!)
             }
     }
+    fun getInmuebleById(
+        idInmueble: String,
+        callbackOK: (Inmueble) -> Unit,
+        callbackError: (String) -> Unit
+    ) {
+        dbFirebase.collection("inmueble")
+            .document(idInmueble)
+            .get()
+            .addOnSuccessListener { document ->
+                    val inm = Inmueble(
+                        document.id,
+                        document.data!!["direccion"]!! as String,
+                        document.data!!["idUsurious"]!! as String,
+                        document.data!!["titulo"]!! as String,
+                        document.data!!["url"]!! as String
+                    )
+                callbackOK(inm)
+            }
+            .addOnFailureListener {
+                callbackError(it.message!!)
+            }
+    }
+
     fun getArrendatarioActivo(
         idInmueble: String,
         callbackOK: (Arrendatario) -> Unit,
