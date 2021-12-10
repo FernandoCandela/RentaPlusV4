@@ -1,34 +1,30 @@
 package com.example.rentaplusv10
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
-import androidx.core.view.GravityCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.rentaplusv10.fragments.InmueblesFragment
 import com.example.rentaplusv10.model.Inmueble
-import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedListener{
-
+    private lateinit var auth: FirebaseAuth
     private val fragments = mutableListOf<Fragment>()
     private lateinit var dlaMain : DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        auth = FirebaseAuth.getInstance()
         fragments.add(InmueblesFragment())
 
         val ft = supportFragmentManager.beginTransaction()
         ft.add(R.id.flaContent,fragments[0])
         ft.commit()
     }
-
-
     override fun onSelect(inmueble: Inmueble) {
         Log.i("text","click");
         Log.i("texto",inmueble.direccion)
@@ -41,7 +37,9 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
     }
 
     override fun OnMiPerfilClick() {
-        TODO("Not yet implemented")
+        val intent: Intent = Intent()
+        intent.setClass(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 
     override fun OnAgregarInmuebleClick() {
@@ -51,7 +49,9 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
     }
 
     override fun OnCerrarSesionClick() {
-        TODO("Not yet implemented")
+        auth.signOut()
+        val intent = Intent(this, SignInActivity::class.java)
+        this.startActivity(intent)
     }
 
 }
