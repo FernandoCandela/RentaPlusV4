@@ -21,39 +21,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviDireccion" />
+        app:layout_constraintTop_toBottomOf="@+id/tviFechaPago" />
 
     <EditText
-        android:id="@+id/tviDireccion"
+        android:id="@+id/tviFechaPago"
         android:layout_width="264dp"
         android:layout_height="54dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/ic_field"
-        android:drawableStart="@drawable/ubicacion"
-        android:drawableLeft="@drawable/ubicacion"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Dirección"
+        android:hint="Fecha"
         android:inputType="textPersonName"
         android:maxLength="40"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tviMonto" />
 
     <EditText
-        android:id="@+id/tviTitulo"
+        android:id="@+id/tviMonto"
         android:layout_width="264dp"
         android:layout_height="54dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/ic_field"
-        android:drawableStart="@drawable/home"
-        android:drawableLeft="@drawable/home"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Titulo"
-        android:inputType="textPersonName"
+        android:hint="Monto"
+        android:inputType="numberDecimal"
         android:maxLength="40"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
