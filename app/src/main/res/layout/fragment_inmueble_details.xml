@@ -1,6 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/iviInmueblePhoto"
+        android:layout_width="99dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tviInmuebleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/iviInmueblePhoto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tviInmuebleDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/tviInmuebleTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tviInmuebleTitle" />
+
+    <Button
+        android:id="@+id/butEditInmuebleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Editar Inmueble"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tviInmuebleDireccion" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Inquilino"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iviInmueblePhoto" />
+
+    <TextView
+        android:id="@+id/tviInquilinoActualName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="DEUDA PENDIENTE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tviInquilinoActualName"
+        app:layout_constraintTop_toBottomOf="@+id/tviInquilinoActualName" />
+
+    <TextView
+        android:id="@+id/tviDeudaInquilinoActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/butEditarInquilinoActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Editar Inquilino"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="Fecha de Pago"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butEditarInquilinoActual" />
+
+    <TextView
+        android:id="@+id/tviFechaPagoInquilinoActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/butAgregarFactura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="Agregar Factura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tviFechaPagoInquilinoActual" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.rentaplusv10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -28,27 +29,15 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
     }
 
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == android.R.id.home){
-            dlaMain.openDrawer(GravityCompat.START)
-        }
-        return super.onOptionsItemSelected(item)
-
-    }
-
-    fun changeInmueblesFragment(){
-
-
-        val fragment = fragments[0]
-
-        val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.flaContent,fragment)
-        ft.commit()
-    }
-
     override fun onSelect(inmueble: Inmueble) {
         Log.i("text","click");
         Log.i("texto",inmueble.direccion)
+        val intent: Intent = Intent()
+        intent.setClass(this, InmuebleDetailActivity::class.java)
+        val bundle: Bundle = Bundle()
+        bundle.putString("inmueble", inmueble.id )
+        intent.putExtra("data", bundle)
+        startActivity(intent)
     }
 
 }
