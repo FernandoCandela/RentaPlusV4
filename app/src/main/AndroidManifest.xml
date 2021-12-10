@@ -44,6 +44,12 @@
         <activity
             android:name=".InmuebleDetailActivity"
             android:exported="false"/>
+        <activity
+            android:name=".AddFacturaActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".EditInmuebleActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
