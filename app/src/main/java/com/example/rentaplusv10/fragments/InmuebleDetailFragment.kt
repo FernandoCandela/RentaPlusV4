@@ -59,21 +59,35 @@ class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
         }, { error ->
             Toast.makeText(activity, "Error: " + error, Toast.LENGTH_SHORT).show()
         })
-        InmuebleManager().getArrendatarioActivo(idInmueble,{ arr: Arrendatario ->
+        InmuebleManager().getArrendatarioActivo(idInmueble,{ arr: Arrendatario? ->
             val tviInquilinoActualName = view.findViewById<TextView>(R.id.tviInquilinoActualName)
-            tviInquilinoActualName.text = arr.nombres + " " + arr.apellidos
             val tviDeudaInquilinoActual = view.findViewById<TextView>(R.id.tviDeudaInquilinoActual)
-            tviDeudaInquilinoActual.text = arr.monto.toString()
             val tviFechaPagoInquilinoActual = view.findViewById<TextView>(R.id.tviFechaPagoInquilinoActual)
-            tviFechaPagoInquilinoActual.text = arr.fecha_pago
             val butEditarInquilinoActual = view.findViewById<Button>(R.id.butEditarInquilinoActual)
+            val butAgregarFactura = view.findViewById<Button>(R.id.butAgregarFactura)
+            if(arr == null){
+                tviInquilinoActualName.text = ""
+
+                tviDeudaInquilinoActual.text = ""
+
+                tviFechaPagoInquilinoActual.text = ""
+            }else{
+
+
+            tviInquilinoActualName.text = arr.nombres + " " + arr.apellidos
+
+            tviDeudaInquilinoActual.text = arr.monto.toString()
+
+            tviFechaPagoInquilinoActual.text = arr.fecha_pago
+
             butEditarInquilinoActual.setOnClickListener{ _:View ->
                 listener?.onEditInquilinoClick(arr)
             }
 
-            val butAgregarFactura = view.findViewById<Button>(R.id.butAgregarFactura)
+
             butAgregarFactura.setOnClickListener{ _ : View ->
                 listener?.onAddFacturaClick(arr)
+            }
             }
 
         }, { error ->

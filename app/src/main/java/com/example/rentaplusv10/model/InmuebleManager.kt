@@ -85,7 +85,7 @@ class InmuebleManager() {
 
     fun getArrendatarioActivo(
         idInmueble: String,
-        callbackOK: (Arrendatario) -> Unit,
+        callbackOK: (Arrendatario?) -> Unit,
         callbackError: (String) -> Unit
     ) {
         dbFirebase.collection("arrendatario")
@@ -108,7 +108,12 @@ class InmuebleManager() {
                     )
                     arrendatarios.add(pk)
                 }
-                callbackOK(arrendatarios.first())
+                if(arrendatarios.size!=0) {
+                    callbackOK(arrendatarios.first())
+                }else {
+                    callbackOK(null)
+                }
+
             }
             .addOnFailureListener {
                 callbackError(it.message!!)
@@ -175,7 +180,7 @@ class InmuebleManager() {
                     "fecha_pago" to arrendatario.fecha_pago,
                     "idInmueble" to arrendatario.idInmueble,
                     "monto" to arrendatario.monto,
-                    "nombre" to arrendatario.nombres,
+                    "nombres" to arrendatario.nombres,
                     "telefono" to arrendatario.telefono
                 )
             )
