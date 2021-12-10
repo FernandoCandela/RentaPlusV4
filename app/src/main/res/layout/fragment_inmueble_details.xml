@@ -7,28 +7,6 @@
     android:layout_height="wrap_content"
     android:paddingBottom="16dp">
 
-    <TextView
-        android:id="@+id/tviaddinquilino2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="12dp"
-        android:text="Agregar Arrendatario"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toStartOf="@+id/btnHistorial"
-        app:layout_constraintTop_toBottomOf="@+id/tviaddinquilino" />
-
-    <TextView
-        android:id="@+id/tviaddinquilino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="32dp"
-        android:text="Historial"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toTopOf="@+id/btnHistorial"
-        app:layout_constraintEnd_toStartOf="@+id/btnAgregarInquilino" />
-
     <ImageView
         android:id="@+id/iviInmueblePhoto"
         android:layout_width="99dp"
@@ -64,10 +42,11 @@
         android:id="@+id/butEditInmuebleDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Editar Inmueble"
+        android:text="Editar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tviInmuebleDireccion" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -75,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        android:text="Inquilino"
+        android:text="Arrendatario"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iviInmueblePhoto" />
@@ -84,7 +63,8 @@
         android:id="@+id/tviInquilinoActualName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -94,18 +74,19 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="DEUDA PENDIENTE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="@+id/tviInquilinoActualName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Deunda Pendiente"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tviInquilinoActualName" />
 
     <TextView
         android:id="@+id/tviDeudaInquilinoActual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -116,8 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Editar Arrendatario
-"
+        android:text="Editar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
@@ -125,20 +105,22 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
         android:text="Fecha de Pago"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butEditarInquilinoActual" />
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tviDeudaInquilinoActual" />
 
     <TextView
         android:id="@+id/tviFechaPagoInquilinoActual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -146,36 +128,58 @@
         android:id="@+id/butAgregarFactura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:text="Agregar Factura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tviFechaPagoInquilinoActual" />
-
-    <ImageView
-        android:id="@+id/btnHistorial"
-        android:layout_width="46dp"
-        android:layout_height="42dp"
-        android:layout_gravity="end"
-        android:layout_marginTop="632dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/all"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reloj"
-        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/btnAgregarInquilino"
         android:layout_width="46dp"
         android:layout_height="42dp"
         android:layout_gravity="end"
-        android:layout_marginTop="568dp"
+        android:layout_marginTop="484dp"
         android:layout_marginEnd="24dp"
         android:contentDescription="@string/all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/tviaddinquilino2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="12dp"
+        android:text="Historial"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/btnHistorial"
+        app:layout_constraintTop_toBottomOf="@+id/tviaddinquilino" />
+
+    <TextView
+        android:id="@+id/tviaddinquilino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Agregar Arrendatario"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistorial"
+        app:layout_constraintEnd_toStartOf="@+id/btnAgregarInquilino" />
+
+    <ImageView
+        android:id="@+id/btnHistorial"
+        android:layout_width="46dp"
+        android:layout_height="42dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="552dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reloj"
         tools:ignore="VectorDrawableCompat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
