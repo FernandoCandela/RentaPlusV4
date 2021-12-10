@@ -236,7 +236,7 @@ class InmuebleManager() {
         callbackOK: (Boolean) -> Unit,
         callbackError: (String) -> Unit
     ) {
-        dbFirebase.collection("arrendatario")
+        dbFirebase.collection("inmueble")
             .document(inmueble.id)
             .update(
                 "direccion", inmueble.direccion,
