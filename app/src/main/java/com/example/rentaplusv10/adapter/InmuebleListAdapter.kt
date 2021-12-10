@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.rentaplusv10.R
 import com.example.rentaplusv10.model.Inmueble
 
@@ -43,6 +44,15 @@ class InmuebleListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tviInmuebleName.text = inmuebleList[position].titulo
         holder.tviInmuebleAdress.text = inmuebleList[position].direccion
+
+/*        Glide
+            .with(fragment)
+            .load(inmuebleList[position].url)
+            .centerCrop()
+            .placeholder(R.drawable.profile_photo)
+            .into(holder.iviInmuebleImage)*/
+
+
     }
 
     override fun getItemCount(): Int {
