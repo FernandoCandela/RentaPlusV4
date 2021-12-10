@@ -60,7 +60,8 @@ class InmueblesFragment  : Fragment(){
         InmuebleManager().getInmueblesByUser(idUser,{ vgList : MutableList<Inmueble> ->
             val rviInmuebles = view.findViewById<RecyclerView>(R.id.rviInmuebles)
             rviInmuebles.adapter = InmuebleListAdapter(
-                vgList)
+                vgList,
+                this)
             {
                     inm: Inmueble  ->
                 listener?.onSelect(inm)

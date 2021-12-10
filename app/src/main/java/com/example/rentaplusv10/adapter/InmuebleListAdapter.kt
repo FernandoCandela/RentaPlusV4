@@ -13,6 +13,7 @@ import com.example.rentaplusv10.model.Inmueble
 
 class InmuebleListAdapter(
     private val inmuebleList : List<Inmueble>,
+    private val fragment: Fragment,
     private val listener : (Inmueble) -> Unit) :
     RecyclerView.Adapter<InmuebleListAdapter.ViewHolder>() {
 
@@ -45,12 +46,13 @@ class InmuebleListAdapter(
         holder.tviInmuebleName.text = inmuebleList[position].titulo
         holder.tviInmuebleAdress.text = inmuebleList[position].direccion
 
-/*        Glide
+        Glide
             .with(fragment)
             .load(inmuebleList[position].url)
-            .centerCrop()
+            .override(600,200)
+            .fitCenter()
             .placeholder(R.drawable.profile_photo)
-            .into(holder.iviInmuebleImage)*/
+            .into(holder.iviInmuebleImage)
 
 
     }
