@@ -15,7 +15,7 @@ import com.example.rentaplusv10.adapter.InmuebleListAdapter
 import com.example.rentaplusv10.model.Inmueble
 import com.example.rentaplusv10.model.InmuebleManager
 
-class InmuebleDetailFragment( val idInmueble : String) : Fragment() {
+class InmuebleDetailFragment(val idInmueble: String) : Fragment() {
 
     interface OnEditInmuebleClicked {
         fun onEditInmuebleClick()
@@ -33,30 +33,30 @@ class InmuebleDetailFragment( val idInmueble : String) : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_inmueble_details,container,false)
+        return inflater.inflate(R.layout.fragment_inmueble_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // val idUser = FirebaseAuth.getInstance().currentUser!!.uid
-        val idUser="KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
+        val idUser = "KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
         print(idUser)
 
 
-       // InmuebleManager().getInmuebleById(idInmueble,{ inm : Inmueble ->
-       //     val tviInmuebleTitle = view.findViewById<TextView>(R.id.tviInmuebleTitle)
-       //     tviInmuebleTitle.text = inm.titulo
-       //     val tviInmuebleDireccion = view.findViewById<TextView>(R.id.tviInmuebleDireccion)
-       //     tviInmuebleDireccion.text = inm.direccion
+        InmuebleManager().getInmuebleById(idInmueble, { inm: Inmueble ->
+            val tviInmuebleTitle = view.findViewById<TextView>(R.id.tviInmuebleTitle)
+            tviInmuebleTitle.text = inm.titulo
+            val tviInmuebleDireccion = view.findViewById<TextView>(R.id.tviInmuebleDireccion)
+            tviInmuebleDireccion.text = inm.direccion
 //
-       //     val butEditInmuebleDetail= view.findViewById<Button>(R.id.butEditInmuebleDetail)
-       //     butEditInmuebleDetail.setOnClickListener { _:View ->
-       //         listener?.onEditInmuebleClick()
-       //     }
+            val butEditInmuebleDetail = view.findViewById<Button>(R.id.butEditInmuebleDetail)
+            butEditInmuebleDetail.setOnClickListener { _: View ->
+                listener?.onEditInmuebleClick()
+            }
 //
-       // },{error ->
-       //     Toast.makeText(activity, "Error: " + error, Toast.LENGTH_SHORT).show()
-       // })
+        }, { error ->
+            Toast.makeText(activity, "Error: " + error, Toast.LENGTH_SHORT).show()
+        })
     }
 }

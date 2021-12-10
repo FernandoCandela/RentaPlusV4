@@ -18,7 +18,7 @@ class InmuebleDetailActivity : AppCompatActivity() {
         Log.i("texto",idInmueble)
 
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fraInmuebleDetail, InmuebleDetailFragment(idInmueble))
+        ft.add(R.id.flaInmuebleDetail, InmuebleDetailFragment(idInmueble))
         ft.commit()
     }
 

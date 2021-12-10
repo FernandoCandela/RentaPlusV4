@@ -72,7 +72,7 @@ class InmuebleManager() {
                     val inm = Inmueble(
                         document.id,
                         document.data!!["direccion"]!! as String,
-                        document.data!!["idUsurious"]!! as String,
+                        document.data!!["idUsuario"]!! as String,
                         document.data!!["titulo"]!! as String,
                         document.data!!["url"]!! as String
                     )
