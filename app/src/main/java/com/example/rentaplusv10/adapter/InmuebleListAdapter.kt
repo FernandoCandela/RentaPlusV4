@@ -1,0 +1,45 @@
+package com.example.rentaplusv10.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import com.example.rentaplusv10.R
+import com.example.rentaplusv10.model.Inmueble
+
+class InmuebleListAdapter(
+    private val inmuebleList : List<Inmueble>,
+    private val fragment : Fragment,
+    private val listener : (Inmueble) -> Unit) :
+    RecyclerView.Adapter<InmuebleListAdapter.ViewHolder>() {
+    class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
+        val iviInmuebleImage : ImageView
+        val tviInmuebleName : TextView
+        val tviInmuebleAdress : TextView
+
+        init{
+            iviInmuebleImage = view.findViewById(R.id.iviInmuebleImage)
+            tviInmuebleName= view.findViewById(R.id.tviInmuebleName)
+            tviInmuebleAdress = view.findViewById(R.id.tviInmuebleAdress)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).
+        inflate(R.layout.item_inmueble,parent,false)
+        val viewholder = ViewHolder(view)
+        return viewholder
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.tviInmuebleName.text = inmuebleList[position].titulo
+        holder.tviInmuebleAdress.text = inmuebleList[position].direccion
+    }
+
+    override fun getItemCount(): Int {
+        return inmuebleList.size
+    }
+}
