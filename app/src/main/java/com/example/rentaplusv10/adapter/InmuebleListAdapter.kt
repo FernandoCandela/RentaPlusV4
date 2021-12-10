@@ -49,9 +49,9 @@ class InmuebleListAdapter(
         Glide
             .with(fragment)
             .load(inmuebleList[position].url)
-            .override(600,200)
-            .fitCenter()
-            .placeholder(R.drawable.profile_photo)
+            .override(200,100)
+            .centerCrop()
+            .placeholder(R.drawable.logo)
             .into(holder.iviInmuebleImage)
 
 
