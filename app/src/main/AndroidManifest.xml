@@ -53,6 +53,9 @@
         <activity
             android:name=".AddInmueble"
             android:exported="false"/>
+        <activity
+            android:name=".AddInquilinoActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
