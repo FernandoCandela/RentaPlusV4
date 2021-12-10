@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
 
     override fun onSelect(inmueble: Inmueble) {
         Log.i("text","click");
+        Log.i("texto",inmueble.direccion)
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.rentaplusv10.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,11 @@ class InmueblesFragment  : Fragment(){
 
     private var listener: OnInmuebleSelectedListener? = null
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as? OnInmuebleSelectedListener
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,14 +38,14 @@ class InmueblesFragment  : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val idUser = FirebaseAuth.getInstance().currentUser!!.uid
+       // val idUser = FirebaseAuth.getInstance().currentUser!!.uid
+        val idUser="KMtDBEHnWSPVYVizFZ7Mzd6jOgI2"
         print(idUser)
         InmuebleManager().getInmueblesByUser(idUser,{ vgList : MutableList<Inmueble> ->
             val rviInmuebles = view.findViewById<RecyclerView>(R.id.rviInmuebles)
             rviInmuebles.adapter = InmuebleListAdapter(
-                vgList,
-                this
-            ){
+                vgList)
+            {
                     inm: Inmueble  ->
                 listener?.onSelect(inm)
             }

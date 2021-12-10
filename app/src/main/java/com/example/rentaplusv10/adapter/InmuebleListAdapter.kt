@@ -12,10 +12,12 @@ import com.example.rentaplusv10.model.Inmueble
 
 class InmuebleListAdapter(
     private val inmuebleList : List<Inmueble>,
-    private val fragment : Fragment,
     private val listener : (Inmueble) -> Unit) :
     RecyclerView.Adapter<InmuebleListAdapter.ViewHolder>() {
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
+
+    class ViewHolder(view : View, val listener: (Inmueble) -> Unit,val inmuebleList : List<Inmueble>) : RecyclerView.ViewHolder(view),
+        View.OnClickListener{
+
         val iviInmuebleImage : ImageView
         val tviInmuebleName : TextView
         val tviInmuebleAdress : TextView
@@ -24,13 +26,17 @@ class InmuebleListAdapter(
             iviInmuebleImage = view.findViewById(R.id.iviInmuebleImage)
             tviInmuebleName= view.findViewById(R.id.tviInmuebleName)
             tviInmuebleAdress = view.findViewById(R.id.tviInmuebleAdress)
+            view.setOnClickListener(this)
+        }
+        override fun onClick(v: View?) {
+            listener(inmuebleList[adapterPosition])
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).
         inflate(R.layout.item_inmueble,parent,false)
-        val viewholder = ViewHolder(view)
+        val viewholder = ViewHolder(view,listener,inmuebleList)
         return viewholder
     }
 
