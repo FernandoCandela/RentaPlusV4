@@ -56,7 +56,11 @@ class InmuebleDetailActivity : AppCompatActivity(),InmuebleDetailFragment.OnInmu
         startActivity(intent)
     }
 
-
+    override fun onAgregarInquilino() {
+        val intent: Intent = Intent()
+        intent.setClass(this, AddInquilinoActivity::class.java)
+        startActivity(intent)
+    }
 
 
 }
