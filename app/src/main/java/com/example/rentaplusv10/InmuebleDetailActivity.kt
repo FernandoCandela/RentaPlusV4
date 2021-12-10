@@ -15,6 +15,7 @@ class InmuebleDetailActivity : AppCompatActivity(),InmuebleDetailFragment.OnInmu
         super.onCreate(savedInstanceState)
 
          idInmueble = intent.getBundleExtra("data")?.getString("inmueble").toString()
+
         setContentView(R.layout.activity_inmueble_detail)
 
 

@@ -54,7 +54,6 @@ class AddInmueble : AppCompatActivity() {
             .centerCrop()
             .placeholder(R.drawable.profile_photo)
             .into(img)
-
     }
 
     private fun fileManager() {
