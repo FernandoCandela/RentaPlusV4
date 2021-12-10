@@ -22,25 +22,6 @@ class MainActivity : AppCompatActivity() , InmueblesFragment.OnInmuebleSelectedL
 
         fragments.add(InmueblesFragment())
 
-        //configuracndo menu hamburguesa
-        val actionBar = supportActionBar
-        actionBar?.setHomeAsUpIndicator(android.R.drawable.ic_menu_manage)
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-
-        //configurando NavigationView
-        val nviMain = findViewById<NavigationView>(R.id.nviMain)
-        dlaMain = findViewById<DrawerLayout>(R.id.dlMain)
-
-        nviMain.setNavigationItemSelectedListener { menuItem : MenuItem ->
-
-            if( menuItem.itemId == R.id.menProducts){
-                changeInmueblesFragment()
-            }
-
-            menuItem.isChecked = true
-            dlaMain.closeDrawers()
-            true
-        }
         val ft = supportFragmentManager.beginTransaction()
         ft.add(R.id.flaContent,fragments[0])
         ft.commit()
