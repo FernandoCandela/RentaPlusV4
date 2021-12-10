@@ -169,9 +169,11 @@ class InmuebleManager() {
         dbFirebase.collection("arrendatario")
             .add(
                 hashMapOf(
-                    "arrendatario" to arrendatario.activo,
-                    "fecha_pago" to arrendatario.apellidos,
-                    "idInmueble" to arrendatario.email,
+                    "activo" to arrendatario.activo,
+                    "apellidos" to arrendatario.apellidos,
+                    "email" to arrendatario.email,
+                    "fecha_pago" to arrendatario.fecha_pago,
+                    "idInmueble" to arrendatario.idInmueble,
                     "monto" to arrendatario.monto,
                     "nombre" to arrendatario.nombre,
                     "telefono" to arrendatario.telefono
@@ -203,6 +205,50 @@ class InmuebleManager() {
                 callbackError(it.message!!)
             }
 
+    }
+
+    fun editArrendatario(
+        arrendatario: Arrendatario,
+        callbackOK: (Boolean) -> Unit,
+        callbackError: (String) -> Unit
+    ) {
+        dbFirebase.collection("arrendatario")
+            .document(arrendatario.id)
+            .update(
+                "apellidos", arrendatario.apellidos,
+                "email", arrendatario.email,
+                "fecha_pago", arrendatario.fecha_pago,
+                "idInmueble", arrendatario.idInmueble,
+                "monto", arrendatario.monto,
+                "nombre", arrendatario.nombre,
+                "telefono", arrendatario.telefono
+            )
+            .addOnSuccessListener {
+                callbackOK(true)
+            }
+            .addOnFailureListener {
+                callbackError(it.message!!)
+            }
+    }
+
+    fun editInmueble(
+        inmueble: Inmueble,
+        callbackOK: (Boolean) -> Unit,
+        callbackError: (String) -> Unit
+    ) {
+        dbFirebase.collection("arrendatario")
+            .document(inmueble.id)
+            .update(
+                "direccion", inmueble.direccion,
+                "titulo", inmueble.titulo,
+                "url", inmueble.url
+            )
+            .addOnSuccessListener {
+                callbackOK(true)
+            }
+            .addOnFailureListener {
+                callbackError(it.message!!)
+            }
     }
 
 }

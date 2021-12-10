@@ -7,6 +7,28 @@
     android:layout_height="wrap_content"
     android:paddingBottom="16dp">
 
+    <TextView
+        android:id="@+id/tviaddinquilino2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="12dp"
+        android:text="Agregar Arrendatario"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/btnHistorial"
+        app:layout_constraintTop_toBottomOf="@+id/tviaddinquilino" />
+
+    <TextView
+        android:id="@+id/tviaddinquilino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="32dp"
+        android:text="Historial"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistorial"
+        app:layout_constraintEnd_toStartOf="@+id/btnAgregarInquilino" />
+
     <ImageView
         android:id="@+id/iviInmueblePhoto"
         android:layout_width="99dp"
@@ -14,7 +36,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"/>
 
     <TextView
         android:id="@+id/tviInmuebleTitle"
@@ -51,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="Inquilino"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +104,8 @@
         android:id="@+id/tviDeudaInquilinoActual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -92,7 +116,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Editar Inquilino"
+        android:text="Editar Arrendatario
+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
@@ -121,10 +146,36 @@
         android:id="@+id/butAgregarFactura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
         android:text="Agregar Factura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tviFechaPagoInquilinoActual" />
+
+    <ImageView
+        android:id="@+id/btnHistorial"
+        android:layout_width="46dp"
+        android:layout_height="42dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="632dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reloj"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/btnAgregarInquilino"
+        android:layout_width="46dp"
+        android:layout_height="42dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="568dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add"
+        tools:ignore="VectorDrawableCompat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
