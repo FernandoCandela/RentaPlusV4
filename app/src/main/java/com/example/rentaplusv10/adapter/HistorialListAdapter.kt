@@ -64,3 +64,5 @@ class HistorialListAdapter(
     override fun getItemCount(): Int {
         return historialList.size
     }
+
+}
